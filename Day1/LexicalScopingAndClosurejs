@@ -1,0 +1,41 @@
+// Lexical Scoping 
+function outer() {
+    let a = 10;
+
+    function inner() {
+        console.log(a); // inner can access a
+    }
+
+    inner();
+}
+
+outer();
+
+//Closure
+
+function outer() {
+    let count = 0;
+
+    return function inner() {
+        count++;
+        console.log(count);
+    };
+}
+
+const counter = outer();  // outer() is finished
+counter();  // 1
+counter();  // 2
+counter();  // 3
+
+
+///Lexical Scoping
+
+// Scope depends on where code is written
+
+// Inner functions can access outer variables
+
+// Closure
+
+// A function remembers variables from its outer scope
+
+// Even after the outer function is gone
